@@ -1,0 +1,153 @@
+<%
+PUBLISHED = [
+    {     
+          TITLE: 'Logarithmic exact crystalline Poincare lemma of higher level modulo p', 
+          JOURNAL: 'J. Algebra, 451(2016), no. 1, 85-114.',
+          URL: 'http://dx.doi.org/10.1016/j.jalgebra.2015.06.012',
+    },
+    {
+          TITLE: 'Monomial deformations of certain hypersurfaces and two hypergeometric functions', 
+          JOURNAL: 'Int. J. Number Theory, 11(2015), no. 8, 2405-2430.',
+          URL: 'http://dx.doi.org/10.1142/S1793042115501122',
+          ERRATA: 'errata_IJNT15.html',
+          PDF: 'mdchthf.pdf'
+    },
+    {
+          TITLE: 'Finiteness of crystalline cohomology of higher level',
+          JOURNAL: 'Ann. Inst. Fourier (Grenoble), 65(2015), no. 3, 975-1004.',
+          URL: 'http://aif.cedram.org/aif-bin/fitem?id=AIF_2015__65_3_975_0',
+          ERRATA: 'errata.html',
+          OA: TRUE
+    },
+    {
+         TITLE: 'An exponential sum and higher-codimensional subvarieties of projective spaces over finite field',
+         JOURNAL: 'Hiroshima Math. J. 44(2014), no. 3, 327-340.',
+         URL: 'http://projecteuclid.org/euclid.hmj/1419619750',
+         COAUTHOR: 'Makoto Sano',
+         OA: TRUE
+    }
+]
+PREPRINT = [
+    {
+        TITLE: 'p-adic generalized hypergeometric functions from the viewpoint of arithmetic D-modules',
+        SUBMIT: TRUE,
+        ARXIV: '1607.04852'
+    }
+]
+%>
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="format-detection" content="telephone=no">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>Kazuaki Miyatani / Papers</title>
+
+    <!-- Bootstrap -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/custom.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+<body>
+    <div class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <a href="./" class="navbar-brand">Kazuaki Miyatani</a>
+                <button class="navbar-toggle" type="button" data-toggle="collapse" data-target="#navbar-main">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+            </div>
+            <div class="navbar-collapse collapse" id="navbar-main">
+                <ul class="nav navbar-nav">
+                    <li><a href="cv.html">CV</a></li>
+                    <li class="active"><a href="papers.html" id="nav-Papers">Papers</a></li>
+                    <li><a href="talks.html" id="nav-Talks">Talks</a></li>
+                </ul>
+                <ul class="nav navbar-nav navbar-right">
+                    <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><i class="fa fa-language fa-lg"></i> <span class="caret"></span></a>
+                    <ul class="dropdown-menu" role="menu" id="language-selector"></ul>
+                    </li>
+
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <h3 id="head-Published">PUBLICATIONS</h3>
+                <!-- <span class="before_toappear">To appear in </span>Journal Name<span class="after_toappear">.</span> -->
+                <div class="list">
+                    <% PUBLISHED.each do |article| %>
+                        <div>
+                        <h5><%= article[:TITLE] %></h5>
+                        <p>
+                        <% if article[:COAUTHOR] then %><span class="before_with">with </span><%= article[:COAUTHOR] %><span class="after_with">.</span><br /><% end %>
+                        <%= article[:JOURNAL] %><br />
+                        <a href="<%= article[:URL] %>" style="border-bottom: dotted 1pt;"><i class="fa fa-link" style="color: green;"></i> Journal Article<% if article[:OA] == TRUE then %> (Open Access)<% end %></a><% if article[:PDF] %> | <a href="pdf/<%= article[:PDF] %>" style="border-bottom: dotted 1pt;"><i class="fa fa-file-pdf-o" style="color: red"></i> PDF</a><% end %><% if article[:ERRATA] %> | <a href="<%= article[:ERRATA] %>" style="border-bottom: dotted 1pt;"><i class="fa fa-rotate-left" style="color: orange;"></i> <span class="errata">Errata</span></a><% end %>
+                        </p>
+                    </div>
+                    <% end # PUBLISHED.each do |article| %>
+                </div>
+
+             <h3 id="head-Preprints">PREPRINTS</h2>
+                <div style="margin-bottom: 30pt;">
+                    <% PREPRINT.each do |preprint| %>
+                    <div style="margin-bottom: 20pt;">
+                        <h5><%= preprint[:TITLE] %></h5>
+                        <p style="margin-left: 40pt; font-weight: 300; font-size: 95%;">
+                        <% if preprint[:COAUTHOR] then %><span class="before_with">with </span><%= preprint[:COAUTHOR] %><span class="after_with">.</span><br /><% end %>
+                        <% if preprint[:SUBMIT] then %><span class="submitted">submitted.</span></br><% end %>
+                        <a href="http://arxiv.org/abs/<%= preprint[:ARXIV] %>" style="border-bottom: dotted 1pt;"><i class="fa fa-link" style="color: #b31b1b;"></i> arXiv Preprint</a>
+                        </p>
+                    </div>
+                    <% end # PREPRINT.each do |preprint| %>
+                </div>
+             </div>
+         </div>
+    </div>
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/js.cookie.js"></script>
+    <script>
+        var translationList = [
+        { selector: "/To appear in ",
+            ja_JP: "", zh_TW: "" },
+        { selector: ".after_toappear",
+            ja_JP: " に掲載予定.", zh_TW: ", 已接受." }, 
+        { selector: ".before_with",
+            ja_JP: "", zh_TW: "與 " },
+        { selector: ".after_with",
+            ja_JP: " 氏との共著.", zh_TW: "." },
+        { selector: ".submitted",
+            ja_JP: "投稿中.", zh_TW: "."},
+        { selector: "#head-Published",
+            ja_JP: "出版論文", zh_TW: "已刊登和已接受之論文" },
+        { selector: "#head-Preprints",
+            ja_JP: "プレプリント", zh_TW: "預印本" },
+        { selector: ".errata",
+            ja_JP: "正誤表", zh_TW: "勘誤表" },
+        { selector: ".navbar-brand",
+            ja_JP: "宮谷 和尭", zh_TW: "宮谷 和堯" },
+        { selector: "title",
+            ja_JP: "宮谷和尭 / 論文" }
+        ];
+    </script>
+    <script src="js/nllocalize.js"></script>
+  </body>
+</html>
