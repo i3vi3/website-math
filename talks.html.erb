@@ -1,0 +1,334 @@
+<%
+TALKS = [
+    { TITLE: 'A finite-field analogue of hypergeometric functions and p-adic hypergeometric differential equations, I-IV',
+      WORKSHOP: 'Summer Seminar on Functional Equations',
+      PLACE: 'Ikoi no Mura Noto Hanto',
+      DATE: 'August 2016'
+    },
+    { TITLE: 'p-adic hypergeometric differential equations and convolution II',
+      WORKSHOP: 'Algebra Seminar',
+      WORKSHOPCLASS: 'alg-with-gaku',
+      PLACE: 'Hiroshima University',
+      DATE: 'May 2016'
+    },
+    { TITLE: 'p-adic hypergeometric differential equations and convolution',
+      WORKSHOP: 'Algebra Seminar',
+      WORKSHOPCLASS: 'alg-with-gaku',
+      PLACE: 'Hiroshima University',
+      DATE: 'April 2016'
+    },
+    { TITLE: 'p-adic hypergeometric D-modules and convolution',
+      WORKSHOP: 'Okayama-Hiroshima algebra symposium',
+      PLACE: 'Okayama University',
+      DATE: 'Mar 2016'
+    },
+    { TITLE: 'Convolution of p-adic hypergeometric differential equations',
+      WORKSHOP: 'Differential equation on complex domains, asymptotic analysis and related topics',
+      PLACE: 'Hiroshima University',
+      DATE: 'Mar 2016'
+    },
+    { TITLE: 'An Introduction to the Middle Convolution from D-module (II)',
+      WORKSHOP: 'Seminar on ODE',
+      PLACE: 'National Taiwan University',
+      DATE: 'Oct 2015'
+    },
+    { TITLE: 'An Introduction to the Middle Convolution from D-module (I)',
+      WORKSHOP: 'Seminar on ODE',
+      PLACE: 'National Taiwan University',
+      DATE: 'Sep 2015'
+    },
+    { TITLE: 'Hypergeometric Systems and the Middle Convolution',
+      WORKSHOP: 'NCTS Seminar series: Hypergeometric Systems and the Middle Convolution',
+      PLACE: 'National Taiwan University',
+      DATE: 'Nov 2014'
+    },
+    { TITLE: 'Slopes, Fourier transforms and irreducible D-modules on curves',
+      WORKSHOP: 'NCTS Seminar series: Hypergeometric Systems and the Middle Convolution',
+      PLACE: 'National Taiwan University',
+      DATE: 'Oct 2014'
+    },
+    { TITLE: 'Finiteness of Crystalline Cohomology of Higher Level',
+      WORKSHOP: 'Mini-Workshop on Arithmetic', 
+      PLACE: 'National Taiwan University', 
+      DATE: 'May 2014'
+    },
+    { TITLE: 'Introductional lecture on </span><a tabindex="0" type="button" class="btn btn-default btn-xs" data-container="body" data-toggle="popover" data-placement="top" data-content="K. S. Kedlaya, Compositio Math., 145 (2009), 143-172." data-original-title="" title="Semistable reduction for overconvergent F-isocrystals III">[Tambara4]</a> <span class="part">(a part)',
+      WORKSHOP: 'Workshop on arithmetic geometry at Tambara',
+      PLACE: 'Tambara Institute of Mathematical Sciences, The University of Tokyo',
+      DATE: 'June 2014'
+    },
+    { TITLE: 'Finiteness of Crystalline Cohomology of Higher Level',
+      WORKSHOP: 'Mini-Workshop on Arithmetic',
+      PLACE: 'National Taiwan University',
+      DATE: 'May 2014'
+    },
+    { TITLE: 'Certain Hypersurfaces and Hypergeometric Functions over Finite Fields',
+      TITLE_CLASS: 'CHHFFF',
+      WORKSHOP: 'Okayama-Hiroshima algebra symposium',
+      PLACE: 'Hiroshima University',
+      DATE: 'Mar 2014',
+    },
+    { TITLE: 'Counting Rational Points of Varieties over Finite Fields in terms of Gauss Sums and a Calculation of an Exponential Sum',
+      WORKSHOP: 'Algebra seminar',
+      WORKSHOPCLASS: 'alg-with-gaku',
+      PLACE: 'Hiroshima University',
+      DATE: 'Mar 2014'
+    },
+    { TITLE: 'Certain Hypersurfaces and Hypergeometric Functions over Finite Fields',
+      TITLE_CLASS: 'CHHFFF',
+      WORKSHOP: 'Seminar on global analysis',
+      PLACE: 'Kumamoto University',
+      DATE: 'Dec 2013'
+    },
+    { TITLE: 'Certain Hypersurfaces and Hypergeometric Functions over Finite Fields',
+      TITLE_CLASS: 'CHHFFF',
+      WORKSHOP: 'Colloquium in Ehime University',
+      PLACE: 'Ehime University',
+      DATE: 'Nov 2013'
+    },
+    { TITLE: 'Hypergeometric Functions over Finite Fields and Some Hypersurfaces',
+      WORKSHOP: 'Arithmetic, differential and geometry',
+      PLACE: 'Tohoku University',
+      DATE: 'Oct 2013'
+    },
+    { TITLE: 'Monomial Deformations of Certain Hypersurfaces and Hypergeometric Functions over Finite Fields',
+      WORKSHOP: 'Workshop on special varieties at Tambara',
+      PLACE: 'Tambara Institute of Mathematical Sciences, The University of Tokyo',
+      DATE: 'Sep 2013'
+    },
+    { TITLE: 'Monomial Deformations of Certain Hypersurfaces and Hypergeometric Functions over Finite Fields',
+      WORKSHOP: 'Topology of algebraic varieties and related topics',
+      PLACE: 'Hokkaido University',
+      DATE: 'Aug 2013'
+    },
+    { TITLE: 'Monomial Deformations of Certain Hypersurfaces and Hypergeometric Functions over Finite Fields',
+      WORKSHOP: 'Workshop on arithmetic geometry at Tambara',
+      PLACE: 'Tambara Institute of Mathematical Sciences, The University of Tokyo',
+      DATE: 'Jun 2013'
+    },
+    { TITLE: 'Introductional lecture on </span><a tabindex="0" type="button" class="btn btn-default btn-xs" data-container="body" data-toggle="popover" data-placement="top" data-content="P. Scholze, Publ. Math. de l&#39;IHES, 116 (2012), 1, 245-313." data-original-title="" title="Perfectoid Spaces">[Tambara3]</a> <span class="part">(a part)',
+      WORKSHOP: 'Workshop on arithmetic geometry at Tambara',
+      PLACE: 'Tambara Institute of Mathematical Sciences, The University of Tokyo',
+      DATE: 'Jun 2013'
+    },
+    { TITLE: 'Monomial Deformations of Certain Hypersurfaces and Two Hypergeometric Functions',
+      WORKSHOP: 'Algebra seminar',
+      WORKSHOP_CLASS: 'alg-without-gaku',
+      PLACE: 'Tohoku University',
+      DATE: 'May 2013'
+    },
+    { TITLE: 'Monomial Deformations of Certain Hypersurfaces and Two Hypergeometric Functions',
+      WORKSHOP: 'Algebra seminar',
+      WORKSHOP_CLASS: 'alg-with-gaku',
+      PLACE: 'Hiroshima University',
+      DATE: 'Apr 2013'
+    },
+    { TITLE: 'Hypergeometric Functions over Finite Fields',
+      TITLE_CLASS: 'HFFF',
+      WORKSHOP: 'Kyushu Algebraic Number Theory',
+      PLACE: 'Kyushu University',
+      DATE: 'Feb 2013'
+    },
+    { TITLE: 'Finiteness of Crystalline Cohomology of Higher Level',
+      TITLE_CLASS: 'FCCHL',
+      WORKSHOP: 'Algebra seminuar',
+      WORKSHOPCLASS: 'alg-with-gaku',
+      PLACE: 'Kyushu University',
+      DATE: 'Oct 2011'
+    },
+    { TITLE: 'Introductional lecture on </span><a tabindex="0" type="button" class="btn btn-default btn-xs" data-container="body" data-toggle="popover" data-placement="top" data-content="K. Kato, Astérisque 295 (2004), 117-290." data-original-title="" title="p-adic Hodge theory and values of zeta functions of modular forms">[Tambara2]</a> <span class="part">(a part)',
+      WORKSHOP: 'Workshop on arithmetic geometry at Tambara',
+      PLACE: 'Tambara Institute of Mathematical Sciences, The University of Tokyo',
+      DATE: 'Jun 2011'
+    },
+    { TITLE: 'Finiteness of Crystalline Cohomology of Higher Level',
+      WORKSHOP: 'Algebraic number theory and related topics',
+      PLACE: 'RIMS (Kyoto)',
+      DATE: 'Dec 2010'
+    },
+    { TITLE: 'Finiteness of Crystalline Cohomology of Higher Level',
+      WORKSHOP: 'Sendai-Hiroshima Number Theory Workshop',
+      PLACE: 'Tohoku University',
+      DATE: 'July 2010'
+    },
+    { TITLE: 'Finiteness of Crystalline Cohomology of Higher Level',
+      WORKSHOP: 'Arithmetic geometry and p-adic differential equations',
+      PLACE: 'Tohoku University',
+      DATE: 'Jul 2010'
+    },
+    { TITLE: 'Introductional lecture on </span><a tabindex="0" type="button" class="btn btn-default btn-xs" data-container="body" data-toggle="popover" data-placement="top" data-content="F. Andreatta and A. Iovita, Astérisque 319 (2008), 339-420." data-original-title="" title="Global applications of relative (φ, Γ)-modules I">[Tambara1]</a> <span class="part">(a part)',
+      WORKSHOP: 'Workshop on arithmetic geometry at Tambara',
+      PLACE: 'Tambara Institute of Mathematical Sciences, The University of Tokyo',
+      DATE: 'May 2010'
+    },
+    { TITLE: 'Finiteness of Crystalline Cohomology of Higher Level',
+      WORKSHOP: 'Workshop on arithmetic geometry at Tambara',
+      PLACE: 'Tambara Institute of Mathematical Sciences, The University of Tokyo',
+      DATE: 'May 2010'
+    }
+]
+%>
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>Kazuaki Miyatani / Talks</title>
+
+    <!-- Bootstrap -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/custom.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+<body>
+    <div class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <a href="./" class="navbar-brand">Kazuaki Miyatani</a>
+                <button class="navbar-toggle" type="button" data-toggle="collapse" data-target="#navbar-main">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+            </div>
+            <div class="navbar-collapse collapse" id="navbar-main">
+                <ul class="nav navbar-nav">
+                    <li><a href="cv.html">CV</a></li>
+                    <li><a href="papers.html" id="nav-Papers">Papers</a></li>
+                    <li class="active"><a href="talks.html" id="nav-Talks">Talks</a></li>
+                </ul>
+                <ul class="nav navbar-nav navbar-right">
+                    <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><i class="fa fa-language fa-lg"></i> <span class="caret"></span></a>
+                    <ul class="dropdown-menu" role="menu" id="language-selector"></ul>
+                    </li>
+
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <h3 id="head-Talks">TALKS</h3> 
+                <div style="margin-bottom: 30pt;">
+                    <% TALKS.each do |talk| %>
+                    <div style="margin-bottom: 10pt;">
+                        <h5><span><%= talk[:TITLE] %></span></h5>
+                        <p style="margin-left: 40pt; font-weight: 300; font-size: 95%;">
+                        <span<% if talk[:WORKSHOPCLASS] then %> class="<%= talk[:WORKSHOPCLASS] %>"<% end %>><%= talk[:WORKSHOP] %></span>, <span><%= talk[:PLACE] %></span>, <span class="date"><%= talk[:DATE] %></span>.
+                        </p>
+                    </div>
+                    <% end # TALKS.each do |talk| %>
+             </div>
+         </div>
+    </div>
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/js.cookie.js"></script>
+    <script>
+        $(function() {
+            $('[data-toggle="popover"]').popover()
+        })
+        var translationList = [
+            { selector: "/To appear in ",
+                ja_JP: "", zh_TW: "" },
+            { selector: ".after_toappear",
+                ja_JP: " に掲載予定.", zh_TW: ", 已接受." }, 
+            { selector: ".before_with",
+                ja_JP: "", zh_TW: "與 " },
+            { selector: ".after_with",
+                ja_JP: " 氏との共著", zh_TW: "." },
+            { selector: "#head-Published",
+                ja_JP: "出版論文", zh_TW: "已刊登和已接受之論文" },
+            { selector: "#head-Preprints",
+                ja_JP: "プレプリント", zh_TW: "預印本" },
+            { selector: ".errata",
+                ja_JP: "正誤表", zh_TW: "勘誤表" },
+            { selector: ".navbar-brand",
+                ja_JP: "宮谷 和尭", zh_TW: "宮谷 和堯" },
+            { selector: "/Introductional lecture on ",
+                ja_JP : "論文紹介：", zh_TW: "論文介紹：" },
+            { selector: ".part",
+                ja_JP : "（一部）", zh_TW: "（一部分）" },
+            { selector: "#head-Talks",
+                ja_JP: "講演", zh_TW: "演講" },
+            { selector: "#head-References",
+                ja_JP: "文献", zh_TW: "演講" },
+            { selector: "title",
+                ja_JP: "宮谷和尭 / 講演" },
+            { selector: "h5 span:contains(\"Monomial Deformations of Certain Hypersurfaces and Two Hypergeometric Functions\")",
+                ja_JP: "ある種の超曲面の単項的変形と２種の超幾何函数" },
+            { selector: "h5 span:contains(\"Monomial Deformations of Certain Hypersurfaces and Hypergeometric Functions over Finite Fields\")",
+                ja_JP: "ある種の超曲面の単項的変形と有限体上の超幾何函数" },
+            { selector: ".CHHFFF",
+                ja_JP: "ある種の超曲面と有限体上の超幾何函数" },
+            { selector: ".HFFF",
+                ja_JP: "有限体上の超幾何函数" },
+            { selector: "h5 span:contains(\"Counting Rational Points of Varieties over Finite Fields in terms of Gauss Sums and a Calculation of an Exponential Sum\")",
+                ja_JP: "ガウス和を用いた有限体上の多様体の有理点の数え上げと，ある exponential sum の計算" },
+            { selector: "h5 span:contains(\"Hypergeometric functions over finite field\")",
+                ja_JP: "有限体上の超幾何函数" },
+            { selector: ".FCCHL",
+                ja_JP: "高レベルクリスタルコホモロジーの有限性" },
+            { selector: ".alg-with-gaku",
+                ja_JP: "代数学セミナー" },
+            { selector: ".alg-without-gaku",
+                ja_JP : "代数セミナー" },
+            { selector: "/Seminar on global analysis",
+                ja_JP : "大域解析セミナー" },
+            { selector: "/Colloquium in Ehime University",
+                ja_JP : "愛媛大学談話会" },
+            { selector: "/Workshop on arithmetic geometry at Tambara",
+                ja_JP : "玉原代数幾何研究集会" },
+            { selector: "/Sendai-Hiroshima Number Theory Workshop", 
+                ja_JP : "仙台広島整数論集会" },
+            { selector: "/Kyushu Algebraic Number Theory",
+                ja_JP : "九州代数的整数論" },
+            { selector: "/Algebraic number theory and related topics",
+                ja_JP : "代数的整数論とその周辺" },
+            { selector: "/Workshop on special varieties at Tambara",
+                ja_JP: "玉原特殊多様体研究集会" },
+            { selector: "/Topology of algebraic varieties and related topics",
+                ja_JP: "代数多様体のトポロジーとその周辺" },
+            { selector: "/Okayama-Hiroshima algebra symposium",
+                ja_JP : "岡山-広島代数学シンポジウム" },
+            { selector: "/Differential equation on complex domains, asymptotic analysis and related topics",
+                ja_JP: "複素領域の微分方程式、漸近解析とその周辺" },
+            { selector: "/Summer Seminar on Functional Equations",
+                ja_JP : "函数方程式論サマーセミナー" }, 
+            { selector: "/Hiroshima University",
+                ja_JP : "広島大学", zh_TW: "廣島大學" },
+            { selector: "/Hokkaido University",
+                ja_JP : "北海道大学", zh_TW: "北海道大學" },
+            { selector: "/Kumamoto University",
+                ja_JP : "熊本大学" },
+            { selector: "/Kyushu University",
+                ja_JP : "九州大学" },
+            { selector: "/Okayama University",
+                ja_JP : "岡山大学" },
+            { selector: "/National Taiwan University",
+                ja_JP : "国立台湾大学", zh_TW: "國立臺灣大學" },
+            { selector: "/Tohoku University",
+                ja_JP : "東北大学" },
+            { selector: "/Tambara Institute of Mathematical Sciences, The University of Tokyo",
+                ja_JP : "東京大学玉原国際セミナーハウス" },
+            { selector: "/Ikoi no Mura Noto Hanto",
+                ja_JP : "いこいの村 能登半島" },
+        ];
+    </script>
+    <script src="js/nllocalize.js"></script>
+  </body>
+</html>
