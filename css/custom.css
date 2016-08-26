@@ -1,0 +1,72 @@
+@import url(https://fonts.googleapis.com/css?family=Raleway:800|Merriweather:300,400,300italic);
+body {
+    font-family: 'Merriweather', YuMincho, serif;
+    font-weight: 300;
+    padding-top: 70px;
+    padding-bottom: 60px;
+}
+
+div.list {
+    margin-bottom: 30pt;
+}
+
+div.list div {
+    margin-bottom: 20pt;
+}
+
+div.list div p {
+    margin-left: 40pt;
+    font-weight: 300;
+    font-size: 95%;
+}
+
+h2 {
+    font-family: 'Raleway';
+    min-height: 60px;
+}
+
+h3 {
+    font-family: 'Raleway';
+    font-weight: 800;
+    min-height: 60px;
+    margin-bottom: -18pt;
+}
+
+h5 {
+    font-family: 'Merriweather', YuMincho, serif;
+    font-weight: 300;
+    font-style: italic;
+    margin-bottom: 2pt;
+}
+
+div.indent {
+    margin-left: 1em;
+}
+
+ul {
+    list-style-type: circle;
+}
+
+ul.breadcrumb {
+    margin-top: 10px;
+}
+
+dl.date-list {
+    margin-top: 5px;
+    margin-bottom: 50px;
+}
+
+dl.date-list dt {
+    font-weight: 300;
+    width: 6.5em;
+    float: left;
+    margin-bottom: 6px;
+}
+
+dl.date-list dd {
+    margin-bottom: 6px;
+}
+
+dl.long dt {
+    width: 11.5em;
+}
