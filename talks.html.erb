@@ -1,9 +1,24 @@
 <%
 TALKS = [
-    { TITLE: 'A finite-field analogue of hypergeometric functions and p-adic hypergeometric differential equations, I-IV',
+    { TITLE: 'An arithmetic analogue of hypergeometric functions and p-adic hypergeometric differential equations',
+      WORKSHOP: 'Kagawa Seminar',
+      PLACE: 'Kagawa University',
+      DATE: 'August 2016'
+    },
+    { TITLE: 'An arithmetic analogue of hypergeometric functions and p-adic hypergeometric differential equations, I-IV',
       WORKSHOP: 'Summer Seminar on Functional Equations',
       PLACE: 'Ikoi no Mura Noto Hanto',
       DATE: 'August 2016'
+    },
+    { TITLE: 'p-adic hypergeometric differential equations and Frobenius structures',
+      WORKSHOP: 'Colloquium in Hiroshima University',
+      PLACE: 'Hiroshima University',
+      DATE: 'June 2016'
+    },
+    { TITLE: 'p-adic hypergeometric D-modules and convolution',
+      WORKSHOP: 'Hakodate Workshop on Arithmetic Geometry',
+      PLACE: 'Hakodate Arena',
+      DATE: 'June 2016'
     },
     { TITLE: 'p-adic hypergeometric differential equations and convolution II',
       WORKSHOP: 'Algebra Seminar',
@@ -223,7 +238,7 @@ TALKS = [
                 <div style="margin-bottom: 30pt;">
                     <% TALKS.each do |talk| %>
                     <div style="margin-bottom: 10pt;">
-                        <h5><span><%= talk[:TITLE] %></span></h5>
+                        <h5><span <% if talk[:TITLECLASS] then %> class="<%= talk[:TITLECLASS] %>"<% end %>><%= talk[:TITLE] %></span></h5>
                         <p style="margin-left: 40pt; font-weight: 300; font-size: 95%;">
                         <span<% if talk[:WORKSHOPCLASS] then %> class="<%= talk[:WORKSHOPCLASS] %>"<% end %>><%= talk[:WORKSHOP] %></span>, <span><%= talk[:PLACE] %></span>, <span class="date"><%= talk[:DATE] %></span>.
                         </p>
@@ -281,8 +296,16 @@ TALKS = [
                 ja_JP: "ガウス和を用いた有限体上の多様体の有理点の数え上げと，ある exponential sum の計算" },
             { selector: "h5 span:contains(\"Hypergeometric functions over finite field\")",
                 ja_JP: "有限体上の超幾何函数" },
+            { selector: "h5 span:contains(\"An arithmetic analogue of hypergeometric functions and p-adic hypergeometric differential equations, I-IV\")",
+                ja_JP: "超幾何函数の数論的類似と p-進超幾何微分方程式 1-4"
+            },
+            { selector: "h5 span:contains(\"An arithmetic analogue of hypergeometric functions and p-adic hypergeometric differential equations\")",
+                ja_JP: "超幾何函数の数論的類似と p-進超幾何微分方程式"
+            },
             { selector: ".FCCHL",
                 ja_JP: "高レベルクリスタルコホモロジーの有限性" },
+            { selector: "h5 span:contains(\"p-adic hypergeometric differential equations and Frobenius structures\")",
+                ja_JP: "p-進超幾何微分方程式とフロベニウス構造" },
             { selector: ".alg-with-gaku",
                 ja_JP: "代数学セミナー" },
             { selector: ".alg-without-gaku",
@@ -291,6 +314,10 @@ TALKS = [
                 ja_JP : "大域解析セミナー" },
             { selector: "/Colloquium in Ehime University",
                 ja_JP : "愛媛大学談話会" },
+            { selector: "/Colloquium in Hiroshima University",
+                ja_JP : "広島大学談話会" },
+            { selector: "/Kagawa Seminar",
+                ja_JP : "香川セミナー" },
             { selector: "/Workshop on arithmetic geometry at Tambara",
                 ja_JP : "玉原代数幾何研究集会" },
             { selector: "/Sendai-Hiroshima Number Theory Workshop", 
@@ -319,12 +346,16 @@ TALKS = [
                 ja_JP : "九州大学" },
             { selector: "/Okayama University",
                 ja_JP : "岡山大学" },
+            { selector: "/Kagawa University",
+                ja_JP : "香川大学" },
             { selector: "/National Taiwan University",
                 ja_JP : "国立台湾大学", zh_TW: "國立臺灣大學" },
             { selector: "/Tohoku University",
                 ja_JP : "東北大学" },
             { selector: "/Tambara Institute of Mathematical Sciences, The University of Tokyo",
                 ja_JP : "東京大学玉原国際セミナーハウス" },
+            { selector: "/Hakodate Arena",
+                ja_JP : "函館アリーナ" },
             { selector: "/Ikoi no Mura Noto Hanto",
                 ja_JP : "いこいの村 能登半島" },
         ];
